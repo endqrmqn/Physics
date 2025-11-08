@@ -1,0 +1,286 @@
+\documentclass[A4,12pt,twoside]{book}
+\usepackage{amd}
+
+% %--------------------------------------------------------------------------
+% %         General Setting
+% %--------------------------------------------------------------------------
+
+\graphicspath{{Images/}{../Images/}} %Path of figures
+\setkeys{Gin}{width=0.85\textwidth} %Size of figures
+\setlength{\cftbeforechapskip}{3pt} %space between items in toc
+\setlength{\parindent}{0.5cm} % Idk
+\input{theorems.tex} % Theorems styles and colors
+\usepackage[english]{babel} %Language
+
+\setlist[itemize]{itemsep=5pt} % Adjust the length as needed
+\setlist[enumerate]{itemsep=5pt} % Adjust the length as needed
+
+
+
+% \usepackage{lmodern} %  Latin Modern font
+% \usepackage{newtxtext,newtxmath}
+
+
+
+
+% %--------------------------------------------------------------------------
+% %         General Informations
+% %--------------------------------------------------------------------------
+\newcommand{\BigTitle}{Theoretical Physics}
+
+\newcommand{\LittleTitle}{
+    For The Motivated Undergraduate
+    }
+
+    
+\begin{document}
+
+% %--------------------------------------------------------------------------
+% %         First pages 
+% %--------------------------------------------------------------------------
+\newgeometry{top=8cm,bottom=.5in,left=2cm,right=2cm}
+\subfile{files/0.0.0.titlepage}
+\restoregeometry
+\subfile{files/0.Preface}
+\subfile{files/0.zommaire}
+
+% %--------------------------------------------------------------------------
+% %         Core of the document 
+% %--------------------------------------------------------------------------
+\part{Mechanics}
+
+\subfile{files/Part I/1.1_StructureOfSpaceTime}
+%   Chapter 1 — The Structure of Space and Time
+%   - Coordinate systems and transformations
+%   - Galilean invariance
+%   - Inertial vs non-inertial frames
+%   - Pseudo forces and rotating frames
+%   - Introduction to generalized coordinates
+
+\subfile{files/Part I/1.2_PrincipleOfLeastAction}
+%   Chapter 2 — The Principle of Least Action
+%   - Calculus of variations
+%   - Euler–Lagrange equations
+%   - Constraints and Lagrange multipliers
+%   - D’Alembert’s principle
+%   - Energy, momentum, and cyclic coordinates
+
+\subfile{files/Part I/1.3_LagrangianApplications}
+%   Chapter 3 — Applications of Lagrangian Mechanics
+%   - Simple and coupled oscillators
+%   - The double pendulum
+%   - Atwood’s machine and generalized coordinates
+%   - Small-angle approximations and linearization
+
+\subfile{files/Part I/1.4_ConservationAndSymmetry}
+%   Chapter 4 — Conservation Laws and Symmetry
+%   - Noether’s theorem in classical mechanics
+%   - Translation, rotation, and time-shift symmetries
+%   - Energy–momentum tensor (mechanical form)
+%   - Central potentials and effective potentials
+
+\subfile{files/Part I/1.5_HamiltonianMechanics}
+%   Chapter 5 — Hamiltonian Mechanics
+%   - Legendre transforms
+%   - Hamilton’s equations
+%   - Poisson brackets and canonical structure
+%   - Constants of motion and integrability
+%   - Phase-space flow and Liouville’s theorem
+
+\subfile{files/Part I/1.6_CanonicalTransformations}
+%   Chapter 6 — Canonical Transformations and Hamilton–Jacobi Theory
+%   - Generating functions (F₁–F₄ types)
+%   - Canonical invariants
+%   - The Hamilton–Jacobi equation
+%   - Action–angle variables and integrable systems
+
+\subfile{files/Part I/1.7_RigidBodyMotion}
+%   Chapter 7 — Rigid-Body Motion
+%   - Rotation matrices and Euler angles
+%   - Angular velocity vector and moment of inertia tensor
+%   - Euler’s equations for rigid-body dynamics
+%   - Symmetric top and precession
+%   - Gyroscopic effects and stability
+
+\subfile{files/Part I/1.8_SmallOscillations}
+%   Chapter 8 — Small Oscillations and Normal Modes
+%   - Equilibrium and linearization
+%   - Coupled harmonic oscillators
+%   - Matrix formulation and eigenvalue problems
+%   - Normal coordinates, orthogonality, and modal analysis
+
+\subfile{files/Part I/1.9_CentralForceMotion}
+%   Chapter 9 — Central Force Motion
+%   - Motion in a plane and conservation of angular momentum
+%   - Effective potential and orbital shapes
+%   - Kepler problem and conic sections
+%   - Scattering and Rutherford formula
+%   - Perturbations and precession (e.g., Mercury)
+
+\subfile{files/Part I/1.10_ContinuousSystems}
+%   Chapter 10 — Continuous and Approximate Systems (Optional Bridge to Fields)
+%   - Discrete-to-continuous limit (mass–spring chain → wave equation)
+%   - Lagrangian density for a vibrating string
+%   - Energy and momentum in continuous media
+%   - Prelude to field theory
+
+\subfile{files/Part I/1.11_MechanicsExercises}
+%   Chapter 11 — Exercises for Part I: Mechanics
+%   - 50 original problems without solutions
+%   - Increasing difficulty across conceptual, computational, and theoretical levels
+%   - Integrative challenges combining symmetry, dynamics, and geometry
+
+
+\part{Fields and Waves}
+
+\subfile{files/Part II/2.1_FieldConcept}
+%   Chapter 1 — The Field Concept
+%   - Motivation for fields and the continuum limit
+%   - Scalar and vector fields
+%   - Field energy and flux
+%   - Local interactions and superposition
+
+\subfile{files/Part II/2.2_WaveEquation}
+%   Chapter 2 — The Wave Equation
+%   - Derivation in one and three dimensions
+%   - Boundary conditions
+%   - Standing waves and superposition
+%   - Energy transport and group velocity
+
+\subfile{files/Part II/2.3_ElectromagneticFields}
+%   Chapter 3 — Electromagnetic Fields
+%   - Maxwell’s equations
+%   - Potentials and gauge freedom
+%   - Plane-wave solutions in vacuum
+%   - Connection between electricity and magnetism
+
+\subfile{files/Part II/2.4_FieldEnergyMomentum}
+%   Chapter 4 — Energy, Momentum, and Stress in Fields
+%   - Poynting vector and energy conservation
+%   - Field momentum and stress tensor
+%   - Relation to Noether’s theorem
+
+\subfile{files/Part II/2.5_PolarizationAndMedia}
+%   Chapter 5 — Polarization, Media, and Boundaries
+%   - Dielectrics and conductors
+%   - Boundary conditions
+%   - Reflection, refraction, and polarization
+
+\subfile{files/Part II/2.6_WavesAndRadiation}
+%   Chapter 6 — Electromagnetic Waves and Radiation
+%   - Plane and spherical waves
+%   - Polarization states
+%   - Radiation from accelerating charges
+%   - Dipole fields and radiation patterns
+
+\subfile{files/Part II/2.7_RelativisticElectrodynamics}
+%   Chapter 7 — The Relativistic Structure of Electrodynamics
+%   - Covariant form of Maxwell’s equations
+%   - Four-vectors and the field tensor
+%   - Lorentz invariance and transformations
+
+\subfile{files/Part II/2.8_WavesInMedia}
+%   Chapter 8 — Waves in Continuous Media
+%   - Elastic and acoustic waves
+%   - Dispersion, phase, and group velocity
+%   - Plasma oscillations
+
+\subfile{files/Part II/2.9_InterferenceDiffraction}
+%   Chapter 9 — Interference and Diffraction
+%   - Huygens–Fresnel principle
+%   - Fraunhofer and Fresnel diffraction
+%   - Coherence and interference patterns
+
+\subfile{files/Part II/2.10_FieldTheoryFoundation}
+%   Chapter 10 — Mathematical Foundations of Field Theory
+%   - Lagrangian density for fields
+%   - Euler–Lagrange equations in field form
+%   - Gauge invariance and conserved currents
+
+\subfile{files/Part II/2.11_FieldExercises}
+%   Chapter 11 — Exercises for Part II: Fields and Waves
+%   - 50 original problems without solutions
+%   - Conceptual, computational, and theoretical variety
+%   - Integrative challenges spanning waves and electromagnetism
+
+
+\part{Fluids, Optics, and Heat}
+
+\subfile{files/Part III/3.1_FluidStaticsKinematics}
+%   Chapter 1 — Fluid Statics and Kinematics
+%   - Density, pressure, and velocity fields
+%   - Streamlines and vorticity
+%   - Continuity equation and flow visualization
+
+\subfile{files/Part III/3.2_EquationsOfFluidMotion}
+%   Chapter 2 — Equations of Fluid Motion
+%   - Euler and Navier–Stokes equations
+%   - Stress tensor and viscosity
+%   - Boundary layers and flow regimes
+
+\subfile{files/Part III/3.3_CompressibleIncompressibleFlows}
+%   Chapter 3 — Incompressible and Compressible Flows
+%   - Bernoulli’s equation
+%   - Sound waves in fluids
+%   - Shock waves and Mach number
+
+\subfile{files/Part III/3.4_ThermodynamicSystems}
+%   Chapter 4 — Thermodynamic Systems and Equations of State
+%   - First and second laws
+%   - State variables and processes
+%   - Reversible and irreversible transformations
+
+\subfile{files/Part III/3.5_StatisticalThermodynamics}
+%   Chapter 5 — Statistical Foundations of Thermodynamics
+%   - Microstates and ensembles
+%   - Boltzmann distribution and partition function
+%   - Entropy and temperature from probability
+
+\subfile{files/Part III/3.6_TransportPhenomena}
+%   Chapter 6 — Transport Phenomena
+%   - Diffusion, conduction, and viscosity
+%   - Fick’s and Fourier’s laws
+%   - Continuity and constitutive relations
+
+\subfile{files/Part III/3.7_WaveOptics}
+%   Chapter 7 — Wave Optics
+%   - Interference and diffraction
+%   - Polarization and coherence
+%   - Optical path and intensity distributions
+
+\subfile{files/Part III/3.8_GeometricalOptics}
+%   Chapter 8 — Geometrical Optics
+%   - Eikonal approximation and ray tracing
+%   - Lenses, mirrors, and image formation
+%   - Connection to Hamilton–Jacobi formalism
+
+\subfile{files/Part III/3.9_ThermalRadiation}
+%   Chapter 9 — Blackbody and Thermal Radiation
+%   - Planck’s law and Stefan–Boltzmann relation
+%   - Photon gas and spectral energy density
+%   - Classical versus quantum limits
+
+\subfile{files/Part III/3.10_NonEquilibriumProcesses}
+%   Chapter 10 — Non-Equilibrium and Irreversibility
+%   - Entropy production and Onsager relations
+%   - Fluctuation–dissipation theorem
+%   - Irreversible thermodynamics
+
+\subfile{files/Part III/3.11_FluidOpticsHeatExercises}
+%   Chapter 11 — Exercises for Part III: Fluids, Optics, and Heat
+%   - 50 original problems without solutions
+%   - Integrating thermodynamics, optics, and continuum physics
+
+
+\part{Relativity}
+
+\part{Quantum}
+
+
+% %--------------------------------------------------------------------------
+% %         Bibliographie 
+% %--------------------------------------------------------------------------
+\nocite{*} % to cite evey things, else cite each on using : \cite{ifrs17}. 
+\printbibliography %to print bibliographie
+
+\end{document}

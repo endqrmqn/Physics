@@ -1,0 +1,184 @@
+\documentclass[../../Main.tex]{subfiles}
+
+\begin{document}
+\chapter{The Structure of Space and Time}
+
+\intro{
+	The world we live in can be described using languages; the language of choice in physics is mathematics. Certain rules and formalisms exist in languages, and mathematics is no exception. We explore the elementary rules and formalisms in rigor, before seeing cases where they do not work. Finally, we introduce the idea of generalized coordinates, which becomes the basis of the physics we cover later. As this chapter simply states the axioms of the physics we deal with, it is very short.
+}
+
+\section{Measurements, Coordinates, and Transformations}
+% Explain coordinate systems, transformations, and frames.
+
+	\quad Although most of us associate physics with variables and equations and the like, physics is fundamentally about the study of nature. For this study of nature, humans have derived methods of measurement to quantify their observations. 
+
+	The first type of basic measurement that humans have had to deal with are basic numerical quantities. Measuring how massive an object is, or how long it takes to travel between two points, or how hot something is are all examples of these basic numerical measurements. We call these quantities \textit{scalars}.
+
+	The second type of basic measurement that humans have had to deal with are directional quantities. Knowing the distance between one's house and a shop is useful, but there are an infinite number of directions one could travel in! To fully describe such quantities, humans have developed the idea of \textit{vectors}, which contain both magnitude and direction.
+
+	One can do a lot of physics with just these two types of measurements. Numerically integrating the vector equations of motion for a rocket over a scalar time variable allows one to calculate a trajectory to the moon. Yet, there exists a dense set of physics beyond numerical computation, which requires rigorous definition. For this, we have to step away from physical intuition and into the realm of mathematical formalism. We begin with vectors,
+
+	\defn{Vector}{
+		$a$ is a \textit{vector} if $a\in V$ where $V$ is a vector space.
+	}
+
+	An unfortunate byproduct of mathematical formalism is the circular, and often ridiculous, definitions we must use. Instead of jumping into the formalism of a vector space, we should develop some physical intuition for vectors.
+
+	Consider two children playing a game of tag and the first child is running after the other. Naturally, we can say that there is some measurable distance between them and the distance has some direction. Let us call this distance vector from the first to the second child $\vec a$, which has some trivial properties. For one, we can say that this distance can be changed, either by the second child running in a different direction or the first child running faster. We can also say that if the first child catches up to the second, then $\vec a=0$. Finally, we can say that the distance vector from the second child to the first is simply $-\vec a$. 
+
+	All of these physical ideas are the basis of \textit{vector spaces}. Formally, we define them as,
+	\defn{Vector Space}{
+		$V$ is a \textit{vector space} if,
+		\begin{itemize}
+			\item it is closed under vector addition and scalar multiplication,
+			\item it contains a zero-vector,
+			\item it contains an additive inverse for all elements.
+		\end{itemize}
+	}
+
+	Counterintuitively, we may actually define scalars through the idea of vectors. Consider a one-dimensional vector space. We can impose certain restrictions on the vectors that exist in this vector space, such as only allowing integer vectors, or real vectors, or vectors within some range. We may then say that these vectors span over a field $\mathbb{F}$, which we call the \textit{scalars} of the vector space.
+
+	Let us now imagine the position of a particle in physical space. To describe its position, we must see how many methods exist of varying its position. In three-dimensional space, we can move the particle in three independent directions, which we call degrees of freedom. We may then say that the position vector of the particle exists in a three-dimensional vector space. To describe how far it has moved along each of these independent directions, we introduce the idea of a coordinate system. It is defined as,
+	\defn{Coordinate System}{
+	A \textit{coordinate system} is a bijective mapping between points in physical space and ordered $n$–tuples in a vector space.
+	}
+
+	One must realize that coordinate systems are not products of nature, simply a method of describing our relation with it. Turning one's head may affect the way they perceive the apparent location of an object, yet it is silly to assume that would change the nature of the object itself. This principle allows the physics of systems to be invariant to its coordinate system, an incredibly powerful tool known as \textit{transformation}. We define it as,
+
+	\defn{Transformation}{
+	A \textit{transformation} is a rule that relates the representation of a vector $\vec{a}$ in one coordinate system to its representation $\vec{a}'$ in another. Formally, we may write
+	\[
+	\vec{a}' = \mathbf{T}\,\vec{a},
+	\]
+	where $\mathbf{T}$ is a linear operator satisfying
+	\[
+	\mathbf{T}(\alpha \vec{a} + \beta \vec{b}) = \alpha\,\mathbf{T}\vec{a} + \beta\,\mathbf{T}\vec{b},
+	\]
+	for all $\alpha, \beta \in \mathbb{F}$ and all $\vec{a}, \vec{b} \in V$.
+	}
+
+	With the previous ideas and definitions, we have laid the foundation for the connection between physical intuition and mathematical formalism that we call \textit{physics}.
+
+\section{Elementary Physical Quantities}
+
+	\quad As we have just finished the idea of coordinate systems, it naturally follows that we define position and its derivative quantities. Given a position vector $\vec r\in\mathbb R^n$, we define velocity as 
+
+	\begin{equation}
+		\vec v = \dot{\vec r}=\frac{d\vec r}{dt},
+	\end{equation}
+
+	and acceleration as 
+
+	\begin{equation}
+		\vec a = \dot{\vec v}=\ddot{\vec r}=\frac{d\vec v}{dt}.
+	\end{equation}
+
+	Here, $t$ is time, which we define to be a scalar quantity. One may see that there exist an unlimited number of time-derivatives of position; however, we only have a limited number of dots, so we will move on. Next, we define that classical objects have scalar inertial mass $m$ and an associated momentum,
+
+	\begin{equation}
+		\vec p = m\vec v.
+	\end{equation}
+
+	From all of this, we arrive at the famous,
+
+	\defn{Force}{
+		A \textit{force} is defined as the time rate of change of momentum,
+		\[
+		\vec F = \dot{\vec p} = \frac{d\vec p}{dt}.
+		\]
+	}
+
+	While the previous couple definitions and equations may not seem like much, we have actually given ourselves the tools to complete the entirety of classical mechanics. Let us consider an example of a collection of $n$ particles with inertial masses $m_i$ at positions $\vec r_i$. The net force on particle $i$ can be described as,
+
+	\begin{equation}
+		\vec F_i = \sum_{j\neq i} \vec F_{i,j},
+	\end{equation}
+
+	where $\vec F_{i,j}$ is the force on particle $i$ due to particle $j$. It therefore follows that the equation of motion for particle $i$ is,
+
+	\begin{equation}
+		m_i \ddot{\vec r}_i = \vec F_i.
+	\end{equation}
+
+	Notice that a collection of $n$ particles is infinitely generalizable. We are able to describe the motion of a rigid body on the surface of Earth, or the flow of the exhaust gases of a rocket, or the motion of celestial bodies in the universe. The essence of classical mechanics, therefore, is contained in these simple equations. 
+
+	While the above equations are beyond elegant, we quickly approach a large problem. If we were to calculate the forces for a handful of particles, we would only have to set aside an hour or so. However, if we were to simulate the motion of every particle, down to the last subatomic particle, we would have to solve an uncountable number of equations. This, quite obviously, becomes impossible to solve analytically or numerically. 
+	
+	There are many workarounds to this. As we will see in physics, we often have to use tricks to simplify a problem or just take approximations instead. One of the simplifications we use is the idea of \textit{energy}, which comes from using the integral extensively, as to wrap the behavior of many particles into a single function.
+
+	Consider the movement of a particle under the influence of a net force. We may say that something is "working" on the particle to cause it to move along some path. This "work" is defined as,
+	\defn{Work}{
+		Work $W$ is defined as the line integral of force along a path $C:\mathbb R\rightarrow\mathbb R^n$,
+		\[
+		W = \int_C \vec F \cdot d\vec r.
+		\]
+	}
+
+	An interesting property of work is that it changes the \textit{kinetic energy} of an object. This property is so interesting, that it has a wonderful name,
+
+	\thmp{Work-Energy Theorem}{
+		Work done on a massive particle changes the particle's kinetic energy according to \[W=\Delta T=\frac{m\Delta (\vec v\cdot\vec v)}{2},\]
+		if the mass of the particle does not change.
+	}{
+		\quad Begin with the definition of work
+		\[
+			W=\int_C \vec F\cdot d\vec r,
+		\]
+		
+		and substitute the definition of force to obtain,
+		
+		\[
+			W=\int_C \frac{d\vec p}{dt}\cdot d\vec r.
+		\]
+		
+		Take the derivative inside the integral, being sure to remember that mass does not change
+		
+		\[
+			W=\int_C m\frac{d\vec v}{dt}\cdot d\vec r.
+		\]
+		
+		Rearrange
+		
+		\[
+			W=\int_C m\frac{d\vec r}{dt}\cdot d\vec v,
+		\]
+		
+		simplify
+		
+		\[
+			W=\int_C m\vec v\cdot d\vec v,
+		\]
+		
+		to obtain kinetic energy
+		
+		\[
+			W=\frac{m(\vec v\cdot\vec v)}{2}=\Delta T,
+		\]
+		
+		and we are done.
+		
+	}
+
+	We now take the examples of friction and gravity. One may have heard of gravitational potential energy, but I doubt one has heard of frictional potential energy! The idea of potential arises from force fields being \text{conservative}, while non-conservative force fields do not have the property of having potential.
+
+\section{Galilean Invariance and Newton}
+% Discuss Galilean transformations and invariance of Newton's laws.
+	\quad Recall what we have previously seen about transformations. They do not change the nature of physical systems, only our description of them. We talked about turning our head not changing the nature of an object. In that case, we took two statioary objects; naturally, this provokes the question of generalizability. Is not only the relative position of two objects invariant to their observation, but also their relative motion?
+
+	This idea of \textit{relativity} was first formalized by Galileo Galilei in the 16th century with a simple thought experiment. Consider a sailor under the deck of the ship on still water. With no windows to peek out from, how can the sailor know if the ship is moving or not? He postulated that the laws of physics are invariant in all inertial reference frames. An \textit{inertial reference frame} is defined as a reference frame that is either at rest or moving with constant velocity. This idea of invariance is now known as \textit{Galilean invariance}.
+
+	Unlike other forms 
+
+\section{Inertial and Non-Inertial Frames}
+% Define inertial and non-inertial reference frames.
+
+\section{Pseudo Forces and Rotating Frames}
+% Derive and explain centrifugal and Coriolis forces.
+
+\section{Introduction to Generalized Coordinates}
+% Motivate generalized coordinates and degrees of freedom.
+
+\section{Summary}
+% Summarize main concepts introduced in this chapter.
+
+\end{document}
